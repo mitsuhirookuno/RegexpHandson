@@ -4,18 +4,20 @@
 require 'test/unit'
 
 # FIXME
-REGEXP = /fixme/.freeze
+REGEXP = /^(hoge\.[a-z]+\.io)$/.freeze
 
 EXAMPLE = <<~EXAMPLE_INPUT.chomp
-01233456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+hoge.cir.io
+hoge.hoge.io
+nothoge.hoge.io
 EXAMPLE_INPUT
 
-EXPECTED = EXAMPLE.chars
+EXPECTED = ["hoge.cir.io", "hoge.hoge.io"]
+
 
 class TestExample < Test::Unit::TestCase
   def test_scan
     assert_match REGEXP, EXAMPLE
-    assert_equal EXPECTED, EXAMPLE.scan(REGEXP)
-    assert(REGEXP.to_s.size <= 12)
+    assert_equal EXPECTED, EXAMPLE.scan(REGEXP).map(&:first)
   end
 end
