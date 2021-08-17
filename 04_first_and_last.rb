@@ -4,7 +4,7 @@
 require 'test/unit'
 
 # FIXME
-REGEXP = /^(hoge\.[a-z]+\.io)$/.freeze
+REGEXP = /fixme/.freeze
 
 EXAMPLE = <<~EXAMPLE_INPUT.chomp
 hoge.cir.io
