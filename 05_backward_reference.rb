@@ -2,20 +2,21 @@
 # frozen_string_literal: true
 
 require 'test/unit'
+require 'pp'
 
 # FIXME
 REGEXP = /fixme/.freeze
 
 EXAMPLE = <<~EXAMPLE_INPUT.chomp
-01233456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+<div>hoge</div>
+<p>foobar</p>
 EXAMPLE_INPUT
 
-EXPECTED = EXAMPLE.chars
+EXPECTED = ['<div>hoge</div>', '<p>foobar</p>'].freeze
 
 class TestExample < Test::Unit::TestCase
   def test_scan
     assert_match REGEXP, EXAMPLE
-    assert_equal EXPECTED, EXAMPLE.scan(REGEXP)
-    assert(REGEXP.to_s.size <= 12)
+    assert_equal EXPECTED, EXAMPLE.scan(REGEXP).map(&:first)
   end
 end
