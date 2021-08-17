@@ -19,7 +19,6 @@ EXPECTED = ['fukurou-labo.co.jp', 'x-dashboard.cir.io'].freeze
 class TestExample < Test::Unit::TestCase
   def test_scan
     assert_match REGEXP, EXAMPLE
-    # binding.irb
     assert_equal EXPECTED, EXAMPLE.scan(REGEXP).map(&:first)
     assert(REGEXP.to_s.size <= 54)
   end
