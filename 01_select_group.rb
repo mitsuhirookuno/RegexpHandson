@@ -4,7 +4,8 @@
 require 'test/unit'
 
 # FIXME
-REGEXP = /fixme/.freeze
+#REGEXP = /co.jp|cir.io/.freeze
+REGEXP = /(fukurou-labo\.co\.jp|x-dashboard\.cir\.io)/.freeze
 
 EXAMPLE = <<~EXAMPLE_INPUT.chomp
   fukurou-labo.co.jp
