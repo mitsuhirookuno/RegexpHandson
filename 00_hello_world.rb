@@ -4,7 +4,7 @@
 require 'test/unit'
 
 # FIXME
-REGEXP = /fixme/.freeze
+REGEXP = /example/.freeze
 
 EXAMPLE = <<~EXAMPLE_INPUT.chomp
   example
