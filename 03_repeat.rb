@@ -4,7 +4,7 @@
 require 'test/unit'
 
 # FIXME
-REGEXP = /(\W+\.x-dashboard(-dev)?\.cir\.io)/.freeze
+REGEXP = /(\w{4,}\.x-dashboard(-dev)?\.cir\.io)/.freeze
 
 EXAMPLE = <<~EXAMPLE_INPUT.chomp
 ocean.x-dashboard-dev.cir.io
