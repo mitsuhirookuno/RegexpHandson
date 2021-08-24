@@ -5,14 +5,15 @@ require 'test/unit'
 require 'pp'
 
 # FIXME
-REGEXP = /fixme/.freeze
+# REGEXP = /<(div|p)>.*<\/\1>/.freeze
+REGEXP = /<(.+)>.*<\/\1>/.freeze
 
 EXAMPLE = <<~EXAMPLE_INPUT.chomp
 <div>hoge</div>
 <p>foobar</p>
 EXAMPLE_INPUT
 
-EXPECTED = ['<div>hoge</div>', '<p>foobar</p>'].freeze
+EXPECTED = ['div', 'p'].freeze
 
 class TestExample < Test::Unit::TestCase
   def test_scan
